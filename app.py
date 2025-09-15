@@ -6,7 +6,7 @@ from models import LLMProvider
 from prompts import SYSTEM_PROMPT
 from web_ingest import load_vendor_urls, fetch_vendor_docs
 
-st.set_page_config(page_title="React Native Course Assistant", page_icon="📱", layout="wide")
+st.set_page_config(page_title="Web Development Project Course Assistant", page_icon="📱", layout="wide")
 
 # Sidebar
 with st.sidebar:
@@ -71,7 +71,7 @@ def get_vendor_docs():
     urls = load_vendor_urls("sources.yaml")
     return fetch_vendor_docs(urls)
 
-st.title("📱 Trợ lý môn React Native (Giảng viên & Học viên)")
+st.title("Trợ lý môn Web Development Project (Giảng viên & Học viên)")
 st.caption("Hỏi về khái niệm, best practices, lab/bài tập (gợi ý), quy định môn học...")
 
 # Session state
@@ -148,7 +148,7 @@ for msg in st.session_state.messages:
                 for c in msg["citations"]:
                     st.write(f"- {c['source']} (score: {c['score']:.3f})")
 
-question = st.chat_input("Đặt câu hỏi về React Native, bài tập, lab, yêu cầu môn học...")
+question = st.chat_input("Đặt câu hỏi về Web Development Project, bài tập, lab, yêu cầu môn học...")
 
 def format_context(chunks):
     parts = []
